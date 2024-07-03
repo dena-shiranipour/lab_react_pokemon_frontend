@@ -1,7 +1,16 @@
+import { Link, Outlet } from "react-router-dom"
+
 const PokemonThumbnail = ({pokemons}) => {
 
-  const handleClick = () => {
-    return;
+  const handleClick = (index) => {
+    return (
+      <>
+      {console.log("Running Handle Click")}
+        <Link to="./information">Show more</Link>
+        
+      </>
+      
+    )
   }
   
   return(
@@ -26,7 +35,6 @@ const PokemonThumbnail = ({pokemons}) => {
             )
           })
         }
-
       </section>
     </>
   )

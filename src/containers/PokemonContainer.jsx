@@ -1,7 +1,11 @@
 import { useState, useEffect} from "react"
-import PokemonThumbnail from "../components/PokemonThumbnal"
+import PokemonThumbnail from "../components/PokemonThumbnail"
+import { Outlet } from "react-router-dom";
+//import Modal from 'react-modal';
+
 
 const PokemonContainer = () => {
+
 
   const [pokemons, setPokemons] = useState([]);
 
@@ -30,7 +34,10 @@ const PokemonContainer = () => {
 
   return(
     <>
+    <Outlet />
+    <hr />
       {pokemons ? <PokemonThumbnail pokemons={pokemons}/> : "Fetching pokemons..."}
+      
     </>
   )
 }
