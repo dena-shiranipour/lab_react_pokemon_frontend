@@ -2,17 +2,6 @@ import { Link, Outlet } from "react-router-dom"
 
 const PokemonThumbnail = ({pokemons}) => {
 
-  const handleClick = (index) => {
-    return (
-      <>
-      {console.log("Running Handle Click")}
-        <Link to="./information">Show more</Link>
-        
-      </>
-      
-    )
-  }
-  
   return(
     <>
       <section className="pokemonThumbnail">
@@ -30,7 +19,9 @@ const PokemonThumbnail = ({pokemons}) => {
                     )
                   })}
                 </ul>
-                <button onClick={()=>handleClick(index)} style={{backgroundColor: "lightblue"}}>More info</button>
+                <Link to ="/information">
+                  <button style={{backgroundColor: "lightblue"}}>More info</button>
+                </Link>
             </div>
             )
           })
