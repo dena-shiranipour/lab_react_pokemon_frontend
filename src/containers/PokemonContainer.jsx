@@ -29,7 +29,6 @@ const PokemonContainer = () => {
 
   return(
     <>
-      <h2>Hello from PokemonContainer</h2>
       {pokemons ? <PokemonThumbnail pokemons={pokemons}/> : "Fetching pokemons..."}
     </>
   )
