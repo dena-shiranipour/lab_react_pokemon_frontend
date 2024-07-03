@@ -13,11 +13,12 @@ const PokemonContainer = () => {
 
   const fetchAllPokemons = async () => {
     const pokemonsURLS = await fetchAllPokemonsURLS();
-    console.log("results :"+ pokemonsURLS.results);
-    const fetchPromises = pokemonsURLS.results.map((element)=> fetch(element.url));
-    const responses = await Promise.all(fetchPromises);
-    const jsonPromises = responses.map((element)=>element.json());
-    const pokemonData = await Promise.all(jsonPromises);
+    const urlArray = pokemonsURLS.results.map((element)=> fetch(element.url));
+    
+    const responseArray = await Promise.all(urlArray);
+    const unserialisedArray = responseArray.map((element)=>element.json());
+
+    const pokemonData = await Promise.all(unserialisedArray);
     setPokemons(pokemonData);
   }
 
