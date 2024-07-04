@@ -19,7 +19,7 @@ const PokemonThumbnail = ({pokemons}) => {
                     )
                   })}
                 </ul>
-                <Link to ={`/information/${pokemon.id}`}>
+                <Link to ={`/pokemon/${pokemon.id}`}>
                   <button style={{backgroundColor: "lightblue"}}>More info</button>
                 </Link>
             </div>

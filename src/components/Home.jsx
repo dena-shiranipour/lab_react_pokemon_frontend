@@ -5,9 +5,6 @@ const Home = () => {
         <> 
     
             <section>
-                <ul>
-                    <li>List 1</li>
-                </ul>
                 <Outlet />
             </section>
             

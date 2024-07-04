@@ -49,6 +49,11 @@ const PokemonContainer = () => {
           {
             path: "/",
             element: <PokemonThumbnail pokemons={pokemons}/>
+          },
+          {
+            path: "/pokemon/:id",
+            loader: pokemonLoader,
+            element: <PokemonInformation pokemons={pokemons}/>
           }
         ]
       }
