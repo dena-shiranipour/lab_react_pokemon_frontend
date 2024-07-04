@@ -1,4 +1,4 @@
-const PokemonInformation = () => {
+const PokemonInformation = ({ pokemons }) => {
   
   return(
     <>

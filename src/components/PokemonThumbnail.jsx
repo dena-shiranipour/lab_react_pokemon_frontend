@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 const PokemonThumbnail = ({pokemons}) => {
 
@@ -19,7 +19,7 @@ const PokemonThumbnail = ({pokemons}) => {
                     )
                   })}
                 </ul>
-                <Link to ="/information">
+                <Link to ={`/information/${pokemon.id}`}>
                   <button style={{backgroundColor: "lightblue"}}>More info</button>
                 </Link>
             </div>

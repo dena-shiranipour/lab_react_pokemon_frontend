@@ -1,8 +1,9 @@
 import { useState, useEffect} from "react"
 import PokemonThumbnail from "../components/PokemonThumbnail"
 import { Outlet } from "react-router-dom";
-//import Modal from 'react-modal';
-
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import PokemonInformation from "../components/PokemonInformation";
+import Home from "../components/Home";
 
 const PokemonContainer = () => {
 
@@ -29,15 +30,36 @@ const PokemonContainer = () => {
   useEffect(()=>{
     fetchAllPokemons()
   },[])
-  
-  console.log(pokemons);
+
+  const pokemonLoader = ({params}) => {
+    const pokemon = pokemons.find(pokemon =>{
+      return pokemon.id === parseInt(params.id);
+    })
+    return pokemon;
+  }
+
+
+  const pokemonRoutes = createBrowserRouter(
+
+    [
+      {
+        path: "/",
+        element: <Home />,
+        children: [
+          {
+            path: "/",
+            element: <PokemonThumbnail pokemons={pokemons}/>
+          }
+        ]
+      }
+    ]
+  )
 
   return(
     <>
-    <Outlet />
+    
     <hr />
-      {pokemons ? <PokemonThumbnail pokemons={pokemons}/> : "Fetching pokemons..."}
-      
+      <RouterProvider router={pokemonRoutes} />
     </>
   )
 }
