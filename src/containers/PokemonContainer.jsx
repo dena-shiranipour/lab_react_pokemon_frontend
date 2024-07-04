@@ -10,7 +10,7 @@ const PokemonContainer = () => {
   const [pokemons, setPokemons] = useState([]);
 
   const fetchAllPokemonsURLS = async () => {
-    const response = await fetch ("https://pokeapi.co/api/v2/pokemon?limit=500");
+    const response = await fetch ("https://pokeapi.co/api/v2/pokemon?limit=1302");
     const data = await response.json();
     return data;
   }
