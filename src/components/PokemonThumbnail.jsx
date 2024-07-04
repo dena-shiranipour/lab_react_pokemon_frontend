@@ -9,7 +9,7 @@ const PokemonThumbnail = ({pokemons}) => {
           pokemons.map((pokemon, index) => {
             return(
             <div key={index}>
-                <h3>{pokemon.forms[0].name}</h3>
+                <h3>{pokemon.name[0].toUpperCase() + pokemon.name.slice(1)}</h3>
                 <img src={pokemon.sprites.front_default} alt={pokemon.forms[0].name} />
                 <p>Types:</p>
                 <ul>
