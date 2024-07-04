@@ -1,9 +1,9 @@
 import { useState, useEffect} from "react"
 import PokemonThumbnail from "../components/PokemonThumbnail"
-import { Outlet } from "react-router-dom";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import PokemonInformation from "../components/PokemonInformation";
 import Home from "../components/Home";
+import Search from "../components/Search";
 
 const PokemonContainer = () => {
 
@@ -44,7 +44,7 @@ const PokemonContainer = () => {
     [
       {
         path: "/",
-        element: <Home />,
+        element: <Home pokemons={pokemons} setPokemons={setPokemons} originalList={fetchAllPokemons}/>,
         children: [
           {
             path: "/",

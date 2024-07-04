@@ -1,14 +1,15 @@
 import { Outlet } from "react-router-dom";
+import Search from "./Search";
 
-const Home = () => {
+const Home = ({pokemons, setPokemons, originalList}) => {
     return(
         <> 
     
             <section>
+            <Search pokemons={pokemons} setPokemons={setPokemons} originalList={originalList}/>
                 <Outlet />
             </section>
             
-
         </>
     )
 }
